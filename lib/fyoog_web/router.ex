@@ -68,6 +68,13 @@ defmodule FyoogWeb.Router do
       on_mount: [{FyoogWeb.UserAuth, :ensure_authenticated}] do
       live "/users/settings", UserSettingsLive, :edit
       live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
+
+      live "/videos", VideoLive.Index, :index
+      live "/videos/new", VideoLive.Index, :new
+      live "/videos/:id/edit", VideoLive.Index, :edit
+
+      live "/videos/:id", VideoLive.Show, :show
+      live "/videos/:id/show/edit", VideoLive.Show, :edit
     end
   end
 
