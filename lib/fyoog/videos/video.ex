@@ -3,8 +3,8 @@ defmodule Fyoog.Videos.Video do
   import Ecto.Changeset
 
   schema "videos" do
-    field :bucket, :string
-    field :key, :string
+    field :bucket, :string, redact: true
+    field :key, :string, redact: true
     field :md5header, :string
 
     timestamps()
