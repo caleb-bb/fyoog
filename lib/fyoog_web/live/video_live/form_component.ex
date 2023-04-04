@@ -19,9 +19,11 @@ defmodule FyoogWeb.VideoLive.FormComponent do
         phx-change="validate"
         phx-submit="save"
       >
-        <.input field={@form[:bucket]} type="text" label="Bucket" />
-        <.input field={@form[:key]} type="text" label="Key" />
-        <.input field={@form[:md5header]} type="text" label="Md5header" />
+        <.input field={@form[:title]} type="text" label="Title" />
+        <.input field={@form[:description]} type="text" label="Description" />
+        <.input field={@form[:key]} type="hidden" value="DUMMY" />
+        <.input field={@form[:md5header]} type="hidden" value="DUMMY" />
+        <.input field={@form[:bucket]} type="hidden" value="DUMMY" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Video</.button>
         </:actions>

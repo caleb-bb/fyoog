@@ -6,6 +6,8 @@ defmodule Fyoog.Repo.Migrations.CreateVideos do
       add :bucket, :string
       add :key, :string
       add :md5header, :string
+      add :title, :string
+      add :description, :string
 
       timestamps()
     end

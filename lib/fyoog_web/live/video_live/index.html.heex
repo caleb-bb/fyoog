@@ -12,9 +12,10 @@
   rows={@streams.videos}
   row_click={fn {_id, video} -> JS.navigate(~p"/videos/#{video}") end}
 >
-  <:col :let={{_id, video}} label="Bucket"><%= video.bucket %></:col>
-  <:col :let={{_id, video}} label="Key"><%= video.key %></:col>
-  <:col :let={{_id, video}} label="Md5header"><%= video.md5header %></:col>
+  <:col :let={{_id, video}} label="Title"><%= video.title %></:col>
+  <:col :let={{_id, video}} label="Description"><%= video.description %></:col>
+  <:col :let={{_id, video}} label="Uploaded"><%= video.inserted_at |> NaiveDateTime.to_date() %></:col>
+  <:col :let={{_id, video}} label="Modified"><%= video.updated_at |> NaiveDateTime.to_date() %></:col>
   <:action :let={{_id, video}}>
     <div class="sr-only">
       <.link navigate={~p"/videos/#{video}"}>Show</.link>
